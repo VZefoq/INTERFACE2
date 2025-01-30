@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacecraft Control Panel</title>
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <script src="/scripts/scripts.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <img src="/images/rover.png" />
+
+        <div id="status">
+            <p id="power">Power: <span>Loading...</span></p>
+            <div id="speed-fuel">
+                <p id="speed">Speed: Loading...</p>
+                <p id="fuel">Fuel: Loading...</p> <!-- Show fuel level -->
+                <p id="batteryPercentage">Battery: Loading...</p> <!-- Show battery percentage -->
+                <!-- Random Sensor Data -->
+<div id="randomSensorData">
+    <p id="randomTemperature">Temperature: Loading...</p>
+    <p id="randomHumidity">Humidity: Loading...</p>
+    <p id="randomResource">Found Resource: Loading...</p>
+</div>
+            </div>
+        </div>
+
+        <!-- Active Sensors and Found Resources -->
+        <div id="activeSensors">Active Sensors: Loading...</div>
+
+        <!-- Speed Input -->
+        <div class="input-container">
+            <input type="number" id="speedInput" placeholder="Enter speed">
+            <button onclick="updateSpeed()">Update Speed</button>
+        </div>
+
+        <!-- Refuel Input (Fuel amount) -->
+        <div class="input-container">
+            <input type="number" id="fuelInput" placeholder="Enter fuel amount (0-100)">
+            <button onclick="refuel()">Refuel</button>
+        </div>
+
+        <!-- Power Control -->
+        <div class="input-container">
+            <select id="powerInput">
+                <option value="ON">ON</option>
+                <option value="OFF">OFF</option>
+            </select>
+            <button onclick="setPower()">Set Power</button>
+        </div>
+
+        <!-- Action Selection -->
+        <!-- Action Selection -->
+    <div class="input-container">
+      <label for="actionSelect">Action:</label>
+           <select id="actionSelect">
+             <option value="move">Move Forward</option>
+             <option value="moveBackward">Move Backward</option>
+              <option value="turnLeft">Turn Left</option> <!-- New Turn Left option -->
+              <option value="turnRight">Turn Right</option> <!-- New Turn Right option -->
+              <option value="sleep">Sleep Mode</option>
+              <option value="toggleSensor">Toggle Sensor</option>
+            </select>
+        </div>
+
+        <!-- Sensor Details Input (for toggleSensor action) -->
+        <div class="input-container">
+            <label for="detailsInput">Details:</label>
+            <input type="text" id="detailsInput" placeholder="Enter sensor name (e.g., camera, temperature)" disabled>
+        </div>        
+
+        <br>
+
+        <button onclick="submitAction()">Execute Action</button>
+    </div>
+</body>
+
+</html>
